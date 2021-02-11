@@ -21,6 +21,8 @@
     color: black;
     padding: 23px 0;
 
+    transition: color 1s;
+
     &:hover {
       color: #00acdc;
     }
