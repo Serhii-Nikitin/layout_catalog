@@ -4,7 +4,6 @@
   width: 200px;
   padding: 15px 14px;
   box-sizing: border-box;
-  margin-bottom: 50px;
 
   display: flex;
   flex-direction: row;
@@ -18,7 +17,17 @@
   &__image {
     width: 160px;
     height: 134px;
-    margin: 15px 5px 45px;
+    margin: 0 auto;
+    padding-top: 12px;
+
+    transform: scale(1, 1);
+    border: 3px solid transparent;
+    transition: transform 1s, border 1s;
+
+    &:hover {
+      transform: scale(1.2, 1.2);
+      border: 3px solid #f3f3f3;
+    }
   }
 
   &__description {
@@ -26,7 +35,7 @@
     font-size: 12px;
     line-height: 15px;
 
-    margin: 0;
+    margin: 42px 0 0;
   }
 
   &__id {
