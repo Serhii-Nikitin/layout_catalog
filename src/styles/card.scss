@@ -98,6 +98,8 @@
     color: white;
     background-color: #00acdc;
     border-radius: 5px;
+
+    transition: background-color 1s, color 1s linear;
   }
 
   &__link:hover {
