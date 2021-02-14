@@ -5,9 +5,8 @@
   padding: 15px 14px;
   box-sizing: border-box;
 
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-rows: repeat(auto-fit, 1fr);
   justify-content: space-between;
 
   background: #fff;
@@ -42,8 +41,18 @@
     margin: 5px 0 0;
   }
 
+  &__wrapper {
+    display: grid;
+    grid-template-columns: fit-content(50%) fit-content(50%);
+    justify-content: space-between;
+  }
+
   &__rating {
-    display: flex;
+    display: grid;
+    grid-gap: 4px;
+    grid-template-columns: repeat(5, 15px);
+    grid-template-rows: 15px;
+    justify-content: start;
 
     margin-top: 15px;
   }
@@ -83,7 +92,7 @@
   }
 
   &__link {
-    display: flex;
+    display: grid;
     justify-content: center;
     line-height: 40px;
     width: 170px;
