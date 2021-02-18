@@ -5,9 +5,8 @@
   padding: 15px 14px;
   box-sizing: border-box;
 
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-rows: repeat(auto-fit, 1fr);
   justify-content: space-between;
 
   background: #fff;
@@ -42,22 +41,35 @@
     margin: 5px 0 0;
   }
 
+  &__wrapper {
+    display: grid;
+    grid-template-columns: fit-content(50%) fit-content(50%);
+    justify-content: space-between;
+  }
+
   &__rating {
-    display: flex;
+    display: grid;
+    grid-gap: 4px;
+    grid-template-columns: repeat(5, 15px);
+    grid-template-rows: 15px;
+    justify-content: start;
 
     margin-top: 15px;
+
+    @for $i from 0 through 5 {
+      &--#{$i} {
+        & :nth-child(-n + #{$i}) {
+          background: url(../images/star-active.svg) no-repeat center;
+        }
+      }
+    }
   }
 
   &__star {
-    background: url(../images/star-active.svg) no-repeat center;
+    background: url(../images/star.svg) no-repeat center;
     width: 15px;
     height: 15px;
     margin-right: 4px;
-  }
-
-  &__star--inactive {
-    background: url(../images/star.svg) no-repeat center;
-    margin: 0;
   }
 
   &__feedback {
@@ -83,7 +95,7 @@
   }
 
   &__link {
-    display: flex;
+    display: grid;
     justify-content: center;
     line-height: 40px;
     width: 170px;
